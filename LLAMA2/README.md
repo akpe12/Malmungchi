@@ -1,10 +1,19 @@
 # malmungchi
+
 ```
 train
-cli command : deepspeed --include localhost:3 --master_port 25999 full_finetun_lora --train_mode='lora'
+cli command : deepspeed --include localhost:0 --master_port 25999 train.py --train_mode='lora'
 inference
-CUDA_VISIBLE_DEVICES=2 python full_finetun_generate.py
+CUDA_VISIBLE_DEVICES=0 python generate.py --inference_mode='lora'
 ```
+
+NOTE : 
+1. generate시 반드시 ckpt 폴더 경로를 반드시 지정해주세요.
+2. inference_mode='full'시 아래의 명령어를 사용해주세요
+```
+CUDA_VISIBLE_DEVICES=0 python generate.py --inference_mode='lora' --full_model_load=True
+```
+
 ## Hyper parameters
 ```python
 # - train
