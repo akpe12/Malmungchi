@@ -16,7 +16,6 @@ parser.add_argument("--model_id", type=str, default='beomi/llama-2-ko-7b')
 parser.add_argument("--save_path", type=str, default="./upload.json")
 parser.add_argument("--model_path", type=str, default="./checkpoint")
 parser.add_argument("--adapter_path", type=str, default="./checkpoint")
-parser.add_argument("--full_model_load", type=str, default=False)
 parser.add_argument("--generate_batch_size", type=int, default=4)
 parser.add_argument("--test_file_path", type=str,
                     default='nikluge-sc-2023-test.jsonl')

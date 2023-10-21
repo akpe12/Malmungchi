@@ -1,5 +1,4 @@
 # malmungchi
-
 ```
 train
 cli command : deepspeed --include localhost:0 --master_port 25999 train.py --train_mode='lora'
@@ -8,10 +7,14 @@ CUDA_VISIBLE_DEVICES=0 python generate.py --inference_mode='lora'
 ```
 
 NOTE : 
-1. generate시 반드시 ckpt 폴더 경로를 반드시 지정해주세요.
-2. inference_mode='full'시 아래의 명령어를 사용해주세요
+- train_mode='full' full fine-tuning 을 의미합니다.
+- qlora, lora generate시 반드시 adapter_path에 adapter_model/config 파일 전체를 지정해주세요
 ```
-CUDA_VISIBLE_DEVICES=0 python generate.py --inference_mode='lora' --full_model_load=True
+CUDA_VISIBLE_DEVICES=0 python generate.py --inference_mode='lora' --adapter_model=f'checkpoint-{steps}'
+```
+- full generate시 global_stpe{steps}가 포함된 전체 ckpt file을 model_path로 지정해주세요.
+```
+CUDA_VISIBLE_DEVICES=0 python generate.py --inference_mode='lora' --model_path=f'checkpoint-{steps}'
 ```
 
 ## Hyper parameters
@@ -71,4 +74,6 @@ bnb_4bit_quant_type="nf4"
 '''
 ```
 ## Inference parameters
+```python 
 batch = 4
+```

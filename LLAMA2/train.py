@@ -1,8 +1,3 @@
-'''
-deepspeed --include localhost:3 --master_port 25999 full_finetun_lora
-'''
-
-from deepspeed.utils.zero_to_fp32 import load_state_dict_from_zero_checkpoint
 from peft import LoraConfig, get_peft_model
 from accelerate.utils import DistributedType
 from datasets import Dataset
@@ -145,9 +140,6 @@ training_args = transformers.TrainingArguments(
     save_steps=args.save_steps,
     seed=args.seed
 )
-
-training_args.distributed_state.distributed_type = DistributedType.DEEPSPEED
-
 
 trainer = transformers.Trainer(
     model=model,
