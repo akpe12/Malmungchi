@@ -1,4 +1,5 @@
 # malmungchi
+
 ```
 train
 cli command : deepspeed --include localhost:0 --master_port 25999 train.py --train_mode='lora'
@@ -8,7 +9,7 @@ CUDA_VISIBLE_DEVICES=0 python generate.py --inference_mode='lora'
 
 NOTE : 
 - train_mode='full' full fine-tuning 을 의미합니다.
-- qlora, lora generate시 반드시 adapter_path에 adapter_model/config 파일 전체를 지정해주세요
+- qlora, lora generate시 반드시 adapter_path에 adapter_model/config 파일 전체를 지정해주세요.
 ```
 CUDA_VISIBLE_DEVICES=0 python generate.py --inference_mode='lora' --adapter_model=f'checkpoint-{steps}'
 ```
