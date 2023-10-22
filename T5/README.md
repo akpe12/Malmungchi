@@ -29,7 +29,7 @@
 '''
 ```
 
-## Hyper parameters
+## Hyper-parameters
 ```python
 # - train
 lr = 2e-4,
