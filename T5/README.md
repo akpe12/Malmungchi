@@ -1,5 +1,6 @@
 # T5 with SLiC
-
+## Model architecture
+![image](https://github.com/akpe12/Malmungchi/assets/77143331/0500a2ad-ac2f-4e37-8e89-e1658b6eda68)
 ## Comparison
 ![점수](https://github.com/akpe12/Malmungchi/assets/77143331/3b6829cc-bf10-454c-848d-4007c885783f)
 
